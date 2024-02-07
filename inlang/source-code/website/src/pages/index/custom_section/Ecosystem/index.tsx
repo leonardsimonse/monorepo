@@ -4,7 +4,6 @@ import {
 	LintRuleIcon,
 	PluginIcon,
 } from "#src/pages/documentation/icons/TinyIcons.jsx"
-import Link from "#src/renderer/Link.jsx"
 import { type JSXElement } from "solid-js"
 import { Arrow } from "../Personas/Developer.jsx"
 import InlangIconBig from "./inlangLogoBig.jsx"
@@ -84,7 +83,7 @@ const Seperator = () => {
 
 const Card = (props: { title: string; description: string; href: string; icon: JSXElement }) => {
 	return (
-		<Link
+		<a
 			class="flex-1 p-4 bg-background/0 hover:bg-background cursor-pointer flex flex-col gap-4 rounded-xl transition-all"
 			href={props.href}
 		>
@@ -96,6 +95,6 @@ const Card = (props: { title: string; description: string; href: string; icon: J
 				</div>
 			</div>
 			<p class="text-surface-500 text-sm pr-8 leading-relaxed">{props.description}</p>
-		</Link>
+		</a>
 	)
 }

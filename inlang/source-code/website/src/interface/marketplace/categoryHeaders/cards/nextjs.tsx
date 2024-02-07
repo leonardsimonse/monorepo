@@ -1,6 +1,5 @@
 import { Button } from "#src/pages/index/components/Button.jsx"
 import * as m from "#src/paraglide/messages.js"
-import Link from "#src/renderer/Link.jsx"
 
 const NextjsHeader = () => {
 	return (
@@ -23,7 +22,7 @@ const NextjsHeader = () => {
 						</Button>
 					</div>
 				</div>
-				<Link
+				<a
 					href="/m/gerre34r/library-inlang-paraglideJs"
 					class="relative flex-1 h-[260px] bg-background rounded-xl border border-surface-300 flex flex-col justify-end md:min-w-[380px] group hover:border-surface-400 transition-all cursor-pointer"
 				>
@@ -43,9 +42,9 @@ const NextjsHeader = () => {
 					</div>
 					<div class="absolute w-full h-full top-0 bg-[#3592FF] rounded-xl z-10 opacity-20" />
 					<div class="absolute w-full h-full top-0 bg-gradient-to-t from-background rounded-xl z-10" />
-				</Link>
+				</a>
 				<div class="flex-1 h-[260px] flex flex-col gap-4 md:min-w-[380px]">
-					<Link
+					<a
 						href="/g/wxcebbig/guide-lorissigrist-useParaglideJsWithNextjsAppRouter"
 						class="w-full flex-1 bg-background rounded-xl border border-surface-300 flex flex-col relative group hover:border-surface-400 transition-all cursor-pointer"
 					>
@@ -69,8 +68,8 @@ const NextjsHeader = () => {
 						<div class="absolute top-4 right-4 w-8 h-8 border border-surface-300 rounded-full flex justify-center items-center group-hover:bg-surface-100 transition-all text-surface-500 group-hover:text-surface-900">
 							<Arrow />
 						</div>
-					</Link>
-					<Link
+					</a>
+					<a
 						href="/g/uxohikde/guide-lorissigrist-useParaglideJsWithNextjsPagesRouter"
 						class="w-full flex-1 bg-background rounded-xl border border-surface-300 flex flex-col relative group hover:border-surface-400 transition-all cursor-pointer"
 					>
@@ -94,7 +93,7 @@ const NextjsHeader = () => {
 						<div class="absolute top-4 right-4 w-8 h-8 border border-surface-300 rounded-full flex justify-center items-center group-hover:bg-surface-100 transition-all text-surface-500 group-hover:text-surface-900">
 							<Arrow />
 						</div>
-					</Link>
+					</a>
 				</div>
 			</div>
 		</>

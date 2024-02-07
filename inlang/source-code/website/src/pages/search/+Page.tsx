@@ -6,7 +6,6 @@ import Card, { CardBuildOwn, NoResultsCard } from "#src/interface/components/Car
 import { Link, Meta, Title } from "@solidjs/meta"
 import MarketplaceLayout from "#src/interface/marketplace/MarketplaceLayout.jsx"
 import * as m from "#src/paraglide/messages.js"
-import { i18nRouting } from "#src/renderer/+onBeforeRoute.js"
 import validator from "validator"
 
 type SubCategoryApplication = "app" | "library" | "plugin" | "messageLintRule"
@@ -59,10 +58,7 @@ export default function Page(props: {
 				name="og:image"
 				content="https://cdn.jsdelivr.net/gh/opral/monorepo@latest/inlang/source-code/website/public/opengraph/inlang-social-image.jpg"
 			/>
-			<Link
-				href={`https://inlang.com${i18nRouting(currentPageContext.urlParsed.pathname).url}`}
-				rel="canonical"
-			/>
+			<Link href={`https://inlang.com${currentPageContext.urlParsed.pathname}`} rel="canonical" />
 			<MarketplaceLayout>
 				<div class="pb-16 md:pb-20 min-h-screen relative">
 					<h2 class="text-md text-surface-600 pb-4 pt-8">{m.marketplace_grid_title_generic()}</h2>

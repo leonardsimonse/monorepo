@@ -6,8 +6,6 @@ import tableOfContents from "../../../../../../blog/tableOfContents.json"
 import "@inlang/markdown/css"
 import "@inlang/markdown/custom-elements"
 import MarketplaceLayout from "#src/interface/marketplace/MarketplaceLayout.jsx"
-import Link from "#src/renderer/Link.jsx"
-import { i18nRouting } from "#src/renderer/+onBeforeRoute.js"
 
 /**
  * The page props are undefined if an error occurred during parsing of the markdown.
@@ -96,7 +94,7 @@ export default function Page(props: PageProps) {
 				}
 			/>
 			<MetaLink
-				href={`https://inlang.com${i18nRouting(currentPageContext.urlParsed.pathname).url}`}
+				href={`https://inlang.com/${currentPageContext.urlParsed.pathname}`}
 				rel="canonical"
 			/>
 			<MarketplaceLayout>
@@ -109,9 +107,9 @@ export default function Page(props: PageProps) {
 							<Markdown markdown={props.markdown} />
 						</div>
 					</Show>
-					<Link class="flex justify-center link link-primary py-4 text-primary " href="/blog">
+					<a class="flex justify-center link link-primary py-4 text-primary " href="/blog">
 						&lt;- Back to Blog
-					</Link>
+					</a>
 				</div>
 			</MarketplaceLayout>
 		</>

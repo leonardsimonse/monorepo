@@ -4,7 +4,6 @@ import MaterialSymbolsArrowOutwardRounded from "~icons/material-symbols/arrow-ou
 import MaterialSymbolsArrowBackRounded from "~icons/material-symbols/arrow-back-rounded"
 import { Match, Switch } from "solid-js"
 import { Title } from "@solidjs/meta"
-import Link from "#src/renderer/Link.jsx"
 
 export default function Page(pageContext: PageContextRenderer) {
 	return (
@@ -20,13 +19,13 @@ export default function Page(pageContext: PageContextRenderer) {
 								<p>Something went wrong, we couldn't find your page.</p>
 							</div>
 
-							<Link href={import.meta.env.PROD ? "https://inlang.com" : "http://localhost:3000"}>
+							<a href={import.meta.env.PROD ? "https://inlang.com" : "http://localhost:3000"}>
 								<sl-button prop:variant="text">
 									{/* @ts-ignore */}
 									<MaterialSymbolsArrowBackRounded slot="prefix" />
 									Back to inlang.com
 								</sl-button>
-							</Link>
+							</a>
 						</Match>
 						<Match when={!pageContext.is404}>
 							<MaterialSymbolsUnknownDocumentOutlineRounded class="w-10 h-10 self-center" />
@@ -37,7 +36,7 @@ export default function Page(pageContext: PageContextRenderer) {
 									this Bug.
 								</p>
 							</div>
-							<Link
+							<a
 								class="self-end pt-5"
 								href="https://github.com/opral/monorepo/issues/new/choose"
 								target="_blank"
@@ -47,7 +46,7 @@ export default function Page(pageContext: PageContextRenderer) {
 									{/* @ts-ignore */}
 									<MaterialSymbolsArrowOutwardRounded slot="suffix" />
 								</sl-button>
-							</Link>
+							</a>
 						</Match>
 					</Switch>
 				</div>

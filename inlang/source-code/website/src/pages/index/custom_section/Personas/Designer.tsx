@@ -1,5 +1,4 @@
 import { Arrow } from "./Developer.jsx"
-import Link from "#src/renderer/Link.jsx"
 import * as m from "#src/paraglide/messages.js"
 
 const DesignrSlide = () => {
@@ -7,15 +6,15 @@ const DesignrSlide = () => {
 		<div class="flex flex-col px-8 py-6 h-full">
 			<div class="flex items-center justify-between">
 				<h3 class="font-medium text-surface-600">{m.home_personas_designer_apps_title()}</h3>
-				<Link class="flex items-center gap-2 text-surface-500 group" href="/c/apps">
+				<a class="flex items-center gap-2 text-surface-500 group" href="/c/apps">
 					<p class="group-hover:text-surface-600">{m.home_personas_designer_more_apps()}</p>
 					<div class="w-8 h-8 border border-surface-300 rounded-full flex justify-center items-center group-hover:bg-surface-100 transition-all text-surface-500 group-hover:text-surface-900">
 						<Arrow />
 					</div>
-				</Link>
+				</a>
 			</div>
 
-			<Link
+			<a
 				href="/m/gkrpgoir"
 				class="flex-1 bg-gradient-to-b from-surface-200 rounded-xl p-[1px] transition-all mt-4"
 			>
@@ -57,7 +56,7 @@ const DesignrSlide = () => {
 						</div>
 					</div>
 				</div>
-			</Link>
+			</a>
 		</div>
 	)
 }

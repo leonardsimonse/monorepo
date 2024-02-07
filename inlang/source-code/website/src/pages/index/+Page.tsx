@@ -7,7 +7,6 @@ import Features from "./custom_section/Features.jsx"
 import ParaglideHeader from "#src/interface/marketplace/categoryHeaders/cards/paraglide.jsx"
 import * as m from "#src/paraglide/messages.js"
 import { renderLocales } from "#src/renderer/renderLocales.js"
-import { i18nRouting } from "#src/renderer/+onBeforeRoute.js"
 import Personas from "./custom_section/Personas/index.jsx"
 import ExtendSection from "./custom_section/Extend/index.jsx"
 import LixSection from "./custom_section/Lix/index.jsx"
@@ -43,10 +42,7 @@ export default function Page() {
 					}
 				/>
 			))}
-			<Link
-				href={`https://inlang.com${i18nRouting(currentPageContext.urlParsed.pathname).url}`}
-				rel="canonical"
-			/>
+			<Link href={`https://inlang.com${currentPageContext.urlParsed.pathname}`} rel="canonical" />
 			<MarketplaceLayout>
 				<HeroSearch />
 				<Features />

@@ -1,6 +1,5 @@
 import { Button } from "#src/pages/index/components/Button.jsx"
 import { For } from "solid-js"
-import Link from "#src/renderer/Link.jsx"
 import { currentPageContext } from "#src/renderer/state.js"
 import { LintRuleIcon, PluginIcon, SDKIcon } from "#src/pages/documentation/icons/NavbarIcons.jsx"
 
@@ -14,12 +13,12 @@ const SdkDocsHeader = () => {
 					}
 				>
 					<div class="flex items-center">
-						<Link
+						<a
 							href={"/"}
 							class="flex items-center w-fit pointer-events-auto py-4 transition-opacity hover:opacity-75"
 						>
 							<img class={"h-8 w-8"} src="/favicon/safari-pinned-tab.svg" alt="Company Logo" />
-						</Link>
+						</a>
 						<p class={"self-center text-left font-regular text-surface-400 pl-4 pr-1"}>/</p>
 						<p class={"self-center pl-2 text-left font-medium text-surface-900"}>Documentation</p>
 					</div>

@@ -5,7 +5,6 @@ import IconGithub from "~icons/cib/github"
 import IconDiscord from "~icons/cib/discord"
 import { IconX } from "#src/interface/components/Icon.jsx"
 import * as m from "#src/paraglide/messages.js"
-import Link from "#src/renderer/Link.jsx"
 
 const Footer = () => {
 	const socialMediaLinks = [
@@ -85,22 +84,22 @@ const Footer = () => {
 		<footer class="overflow-hidden max-w-7xl mx-auto">
 			<div class="flex flex-row flex-wrap-reverse py-16 max-w-7xl mx-auto px-4 xl:px-0 gap-10 sm:gap-x-0 md:gap-y-10 xl:gap-0">
 				<div class="w-full md:w-1/4 xl:px-4 flex flex-col gap-4">
-					<Link href="/" class="flex items-center w-fit">
+					<a href="/" class="flex items-center w-fit">
 						<img class="h-9 w-9" src="/favicon/safari-pinned-tab.svg" alt="Company Logo" />
 						<span class="self-center pl-2 text-left font-semibold text-surface-900">inlang</span>
-					</Link>
+					</a>
 					<p class="text-surface-600 text-sm pt-0.5">{m.footer_inlang_tagline()}</p>
 					<div class="flex flex-wrap gap-6 pt-1">
 						<For each={socialMediaLinks}>
 							{(link) => (
-								<Link
+								<a
 									target="_blank"
 									class={"link link-primary flex space-x-2 items-center text-xs"}
 									href={link.href}
 								>
 									<link.Icon class="w-5 h-5" />
 									<span class="sr-only">{link.name}</span>
-								</Link>
+								</a>
 							)}
 						</For>
 					</div>

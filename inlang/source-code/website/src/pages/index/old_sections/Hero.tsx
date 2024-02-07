@@ -2,7 +2,6 @@ import { For, Show } from "solid-js"
 import { registry } from "@inlang/marketplace-registry"
 import { Chip } from "#src/interface/components/Chip.jsx"
 import { colorForTypeOf, typeOfIdToTitle } from "#src/pages/m/utilities.js"
-import Link from "#src/renderer/Link.jsx"
 import * as m from "#src/paraglide/messages.js"
 
 const featuredArray = [
@@ -25,7 +24,7 @@ const Hero = () => {
 							return (
 								<Show when={m}>
 									<li>
-										<Link
+										<a
 											href={
 												m?.id.split(".")[0] === "guide"
 													? `/g/${m?.uniqueID}/${m?.id.replaceAll(".", "-")}`
@@ -55,7 +54,7 @@ const Hero = () => {
 													</Show>
 												</div>
 											</div>
-										</Link>
+										</a>
 									</li>
 								</Show>
 							)

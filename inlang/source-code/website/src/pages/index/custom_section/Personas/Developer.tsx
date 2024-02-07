@@ -1,5 +1,4 @@
 import { For } from "solid-js"
-import Link from "#src/renderer/Link.jsx"
 import {
 	IconAstro,
 	IconFlutter,
@@ -88,17 +87,17 @@ const DeveloperSlide = () => {
 			<div class="px-6 md:px-8">
 				<div class="flex items-center justify-between">
 					<h3 class="font-medium text-surface-600">{m.home_personas_developer_apps_title()}</h3>
-					<Link class="flex items-center gap-2 text-surface-500 group" href="/c/apps">
+					<a class="flex items-center gap-2 text-surface-500 group" href="/c/apps">
 						<p class="group-hover:text-surface-600">{m.home_personas_developer_more_apps()}</p>
 						<div class="w-8 h-8 border border-surface-300 rounded-full flex justify-center items-center group-hover:bg-surface-100 transition-all text-surface-500 group-hover:text-surface-900">
 							<Arrow />
 						</div>
-					</Link>
+					</a>
 				</div>
 				<div class="grid md:grid-cols-2 h-[430px] sm:h-[530px] md:h-[244px] gap-4 mt-4">
 					<For each={cards}>
 						{(card) => (
-							<Link
+							<a
 								class="relative bg-gradient-to-b from-surface-200 rounded-xl p-[1px] hover:from-surface-300 transition-all"
 								href={card.href}
 							>
@@ -116,7 +115,7 @@ const DeveloperSlide = () => {
 										</div>
 									</div>
 								</div>
-							</Link>
+							</a>
 						)}
 					</For>
 				</div>
@@ -136,14 +135,14 @@ export function StackList() {
 		<div class="flex gap-[10px] md:gap-4 mt-4 overflow-x-scroll hide-scrollbar">
 			<For each={stacks}>
 				{(stack) => (
-					<Link href={stack.link} class="flex-1 min-w-[64px]">
+					<a href={stack.link} class="flex-1 min-w-[64px]">
 						<div class="group w-full flex flex-col items-center gap-2">
 							<div class="flex w-full justify-center items-center border border-surface-200 hover:border-surface-300 bg-gradient-to-b from-surface-50 hover:from-surface-100 rounded-lg h-[60px] overflow-hidden">
 								{stack.icon}
 							</div>
 							<p class="text-center text-sm text-surface-500 font-medium">{stack.name}</p>
 						</div>
-					</Link>
+					</a>
 				)}
 			</For>
 		</div>

@@ -1,6 +1,5 @@
 import { For } from "solid-js"
 import { currentPageContext } from "#src/renderer/state.js"
-import Link from "#src/renderer/Link.jsx"
 import * as m from "#src/paraglide/messages.js"
 import { setSearchInput } from "../components/SearchBar.jsx"
 
@@ -48,7 +47,7 @@ const CategoryTabs = () => {
 							" sm:border-b-[2px] py-[4px] text-sm bg-transparent group content-box"
 						}
 					>
-						<Link
+						<a
 							href={link.href}
 							onClick={() => setSearchInput("")}
 							target={link.href.includes("github.com") ? "_blank" : "_default"}
@@ -63,7 +62,7 @@ const CategoryTabs = () => {
 							>
 								{link.name}
 							</div>
-						</Link>
+						</a>
 					</div>
 				)}
 			</For>

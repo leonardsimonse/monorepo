@@ -20,7 +20,6 @@ import Card from "#src/interface/components/Card.jsx"
 import EditOutline from "~icons/material-symbols/edit-outline-rounded"
 import Documentation from "~icons/material-symbols/description-outline-rounded"
 import Changelog from "~icons/material-symbols/manage-history"
-import Link from "#src/renderer/Link.jsx"
 
 const isProduction = process.env.NODE_ENV === "production"
 
@@ -347,13 +346,13 @@ export default function Page(props: PageProps) {
 											>
 												<div>
 													<h3 class="text-surface-400 text-sm mb-2">Change control</h3>
-													<Link href="/c/lix">
+													<a href="/c/lix">
 														<div class="w-16 text-primary hover:text-hover-primary group transition-colors">
 															<sl-tooltip prop:content="Click to view all">
 																<LixBadge />
 															</sl-tooltip>
 														</div>
-													</Link>
+													</a>
 												</div>
 											</Show>
 											<div>
@@ -436,12 +435,12 @@ export default function Page(props: PageProps) {
 										<div class="flex flex-wrap gap-2 items-center">
 											<For each={props?.manifest?.keywords}>
 												{(keyword) => (
-													<Link
+													<a
 														class="transition-opacity hover:opacity-80 cursor-pointer"
 														href={"/search?q=" + keyword}
 													>
 														<Chip text={keyword} color={colorForTypeOf(props.manifest.id)} />
-													</Link>
+													</a>
 												)}
 											</For>
 										</div>
@@ -465,11 +464,11 @@ export default function Page(props: PageProps) {
 const EcosystemIncompatibleBadgeBig = () => {
 	return (
 		<sl-tooltip prop:content="Learn more">
-			<Link href="/g/7777asdy" class="flex flex-row gap-2 items-center hover:opacity-70">
+			<a href="/g/7777asdy" class="flex flex-row gap-2 items-center hover:opacity-70">
 				<div class="px-3 gap-1 h-8 rounded-lg bg-surface-200 flex items-center font-medium text-surface-500 text-[16px]">
 					Ecosystem Incompatible
 				</div>
-			</Link>
+			</a>
 		</sl-tooltip>
 	)
 }

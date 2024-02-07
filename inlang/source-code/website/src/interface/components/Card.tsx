@@ -5,7 +5,6 @@ import Plus from "~icons/material-symbols/add-rounded"
 import { showToast } from "./Toast.jsx"
 import { rpc } from "@inlang/rpc"
 import { Button } from "#src/pages/index/components/Button.jsx"
-import Link from "#src/renderer/Link.jsx"
 import * as m from "../../paraglide/messages.js"
 import { currentPageContext } from "#src/renderer/state.js"
 
@@ -23,7 +22,7 @@ export default function Card(props: { item: any; displayName: string }) {
 
 	return (
 		<>
-			<Link
+			<a
 				href={
 					props.item.id.split(".")[0] === "guide"
 						? `/g/${props.item.uniqueID}/${props.item.id.replaceAll(".", "-")}`
@@ -194,7 +193,7 @@ export default function Card(props: { item: any; displayName: string }) {
 						</div>
 					</Match>
 				</Switch>
-			</Link>
+			</a>
 		</>
 	)
 }
@@ -205,7 +204,7 @@ export function CardBuildOwn() {
 
 	return (
 		<>
-			<Link
+			<a
 				href="/documentation/publish-to-marketplace"
 				class={
 					"relative no-underline flex flex-col justify-center pt-8 items-center gap-4 group w-full bg-background transition-colors border border-surface-200 rounded-xl p-5 hover:shadow-lg hover:shadow-surface-100 hover:border-surface-300 active:border-surface-400 " +
@@ -221,7 +220,7 @@ export function CardBuildOwn() {
 						{m.marketplace_grid_build_your_own_description()}
 					</p>
 				</div>
-			</Link>
+			</a>
 		</>
 	)
 }

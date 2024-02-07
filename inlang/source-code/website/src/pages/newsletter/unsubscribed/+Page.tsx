@@ -1,8 +1,6 @@
 import MarketplaceLayout from "#src/interface/marketplace/MarketplaceLayout.jsx"
 import { Link as MetaLink, Meta, Title } from "@solidjs/meta"
 import * as m from "#src/paraglide/messages.js"
-import Link from "#src/renderer/Link.jsx"
-import { i18nRouting } from "#src/renderer/+onBeforeRoute.js"
 import { currentPageContext } from "#src/renderer/state.js"
 
 export type PageProps = {
@@ -23,7 +21,7 @@ export default function Page() {
 			/>
 			{/* <Meta name="robots" content="noindex" /> */}
 			<MetaLink
-				href={`https://inlang.com${i18nRouting(currentPageContext.urlParsed.pathname).url}`}
+				href={`https://inlang.com${currentPageContext.urlParsed.pathname}`}
 				rel="canonical"
 			/>
 			<MarketplaceLayout>
@@ -35,13 +33,13 @@ export default function Page() {
 							</h1>
 							<p class="text-lg text-surface-600 leading-relaxed mx-auto text-center">
 								{m.newsletter_unsubscribed_description()}
-								<Link
+								<a
 									class="text-primary hover:text-hover-primary font-semibold ml-1.5"
 									href="https://discord.gg/gdMPPWy57R"
 									target="_blank"
 								>
 									Discord
-								</Link>
+								</a>
 								.
 							</p>
 						</div>

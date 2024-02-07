@@ -1,6 +1,5 @@
 import { For } from "solid-js"
 import { Arrow } from "./Developer.jsx"
-import Link from "#src/renderer/Link.jsx"
 import { Button } from "../../components/Button.jsx"
 import * as m from "#src/paraglide/messages.js"
 
@@ -27,17 +26,17 @@ const TranslatorSlide = () => {
 			<div>
 				<div class="flex items-center justify-between">
 					<h3 class="font-medium text-surface-600">{m.home_personas_translator_apps_title()}</h3>
-					<Link class="flex items-center gap-2 text-surface-500 group" href="/c/apps">
+					<a class="flex items-center gap-2 text-surface-500 group" href="/c/apps">
 						<p class="group-hover:text-surface-600">{m.home_personas_developer_more_apps()}</p>
 						<div class="w-8 h-8 border border-surface-300 rounded-full flex justify-center items-center group-hover:bg-surface-100 transition-all text-surface-500 group-hover:text-surface-900">
 							<Arrow />
 						</div>
-					</Link>
+					</a>
 				</div>
 				<div class="grid md:grid-cols-2 min-h-[400px] md:min-h-[264px] h-[calc(100vw)] sm:h-[600px] md:h-[154px] gap-4 mt-4">
 					<For each={cards}>
 						{(card) => (
-							<Link
+							<a
 								class="relative bg-gradient-to-b from-surface-200 rounded-xl p-[1px] hover:from-surface-300 transition-all"
 								href={card.href}
 							>
@@ -55,7 +54,7 @@ const TranslatorSlide = () => {
 										</div>
 									</div>
 								</div>
-							</Link>
+							</a>
 						)}
 					</For>
 				</div>

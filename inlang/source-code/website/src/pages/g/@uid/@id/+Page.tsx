@@ -7,7 +7,6 @@ import "@inlang/markdown/css"
 import "@inlang/markdown/custom-elements"
 import type { MarketplaceManifest } from "@inlang/marketplace-manifest"
 import MarketplaceLayout from "#src/interface/marketplace/MarketplaceLayout.jsx"
-import Link from "#src/renderer/Link.jsx"
 import EditOutline from "~icons/material-symbols/edit-outline-rounded"
 import { currentPageContext } from "#src/renderer/state.js"
 import { Recommends } from "#src/pages/m/@uid/@id/+Page.jsx"
@@ -149,12 +148,12 @@ export default function Page(props: PageProps) {
 									<div class="flex flex-wrap gap-2 items-center">
 										<For each={props?.manifest?.keywords}>
 											{(keyword) => (
-												<Link
+												<a
 													class="transition-opacity hover:opacity-80 cursor-pointer"
 													href={"/search?q=" + keyword}
 												>
 													<Chip text={keyword} color={colorForTypeOf(props.manifest.id)} />
-												</Link>
+												</a>
 											)}
 										</For>
 									</div>

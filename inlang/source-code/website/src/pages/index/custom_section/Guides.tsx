@@ -2,7 +2,6 @@ import { For } from "solid-js"
 import * as m from "#src/paraglide/messages.js"
 import { registry } from "@inlang/marketplace-registry"
 import { Button } from "../components/Button.jsx"
-import Link from "#src/renderer/Link.jsx"
 import { Arrow } from "./Personas/Developer.jsx"
 
 const Guides = () => {
@@ -43,7 +42,7 @@ const Guides = () => {
 									? manifest.displayName.en
 									: manifest.displayName
 							return (
-								<Link
+								<a
 									href={`/g/${manifest.uniqueID}/${manifest.id.replaceAll(".", "-")}`}
 									class="gap-8 py-6 flex group hover:cursor-pointer items-center"
 								>
@@ -58,7 +57,7 @@ const Guides = () => {
 									<div class="w-8 h-8 border border-surface-300 rounded-full flex justify-center items-center group-hover:bg-surface-100 transition-all text-surface-500 group-hover:text-surface-900">
 										<Arrow />
 									</div>
-								</Link>
+								</a>
 							)
 						}}
 					</For>

@@ -1,4 +1,3 @@
-import Link from "#src/renderer/Link.jsx"
 import { Show } from "solid-js"
 /**
  * A card that displays a repository.
@@ -47,7 +46,7 @@ export function RepositoryCard(props: {
 	}
 
 	return (
-		<Link
+		<a
 			href={
 				props.install
 					? `/install?repo=github.com/${props.repository.owner}/${
@@ -82,6 +81,6 @@ export function RepositoryCard(props: {
 					</p>
 				</Show>
 			</div>
-		</Link>
+		</a>
 	)
 }

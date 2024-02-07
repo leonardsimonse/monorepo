@@ -1,4 +1,3 @@
-import Link from "#src/renderer/Link.jsx"
 import { registry } from "@inlang/marketplace-registry"
 import { For } from "solid-js"
 import { Arrow } from "../Personas/Developer.jsx"
@@ -32,7 +31,7 @@ const LintRulesSection = () => {
 									const manifest = registry.find((manifest) => manifest.id === lintRule)
 									if (!manifest) {
 										return (
-											<Link
+											<a
 												href={`/documentation/lint-rule/guide`}
 												class="col-span-1 bg-background border border-surface-200 hover:border-surface-400 rounded-2xl px-6 py-5 pb-4 flex flex-col gap-4 transition-all w-full"
 											>
@@ -56,7 +55,7 @@ const LintRulesSection = () => {
 														<Arrow />
 													</div>
 												</div>
-											</Link>
+											</a>
 										)
 									}
 									const displayName = () =>
@@ -65,7 +64,7 @@ const LintRulesSection = () => {
 											: manifest.displayName
 
 									return (
-										<Link
+										<a
 											href={`/m/${manifest.uniqueID}/${manifest.id.replaceAll(".", "-")}`}
 											class="col-span-1 bg-background border border-surface-200 hover:border-surface-400 rounded-2xl px-6 py-5 pb-4 flex flex-col gap-4 transition-all"
 										>
@@ -88,7 +87,7 @@ const LintRulesSection = () => {
 													<Arrow />
 												</div>
 											</div>
-										</Link>
+										</a>
 									)
 								}}
 							</For>

@@ -1,6 +1,5 @@
 import { Show, type JSXElement } from "solid-js"
 import { Arrow } from "../Personas/Developer.jsx"
-import Link from "#src/renderer/Link.jsx"
 
 interface LixCardProps {
 	title: string
@@ -12,7 +11,7 @@ interface LixCardProps {
 
 const LixCard = (props: LixCardProps) => {
 	return (
-		<Link href={props.link}>
+		<a href={props.link}>
 			<div class="bg-background rounded-2xl border border-surface-200 py-5 px-6 hover:border-surface-400 transition-all cursor-pointer">
 				<div class="flex justify-between items-center pb-4">
 					<div class="w-10 h-10 rounded-lg bg-surface-100 text-surface-700 flex justify-center items-center">
@@ -34,7 +33,7 @@ const LixCard = (props: LixCardProps) => {
 					<div class="line-clamp-2 text-surface-500">{props.description}</div>
 				</div>
 			</div>
-		</Link>
+		</a>
 	)
 }
 

@@ -1,4 +1,3 @@
-import Link from "#src/renderer/Link.jsx"
 import * as m from "#src/paraglide/messages.js"
 import { Button } from "../components/Button.jsx"
 
@@ -7,15 +6,12 @@ const HeroSearch = () => {
 		<div class="relative flex flex-col lg:flex-row items-center lg:items-start">
 			<div class="items-center lg:items-start relative z-30 flex flex-col w-full lg:w-1/2 gap-2 pb-6 mt-4 md:mt-8">
 				<div class="pt-4 group">
-					<Link
-						href="https://www.youtube.com/live/pTgIx-ucMsY?feature=shared&t=3825"
-						target="_blanc"
-					>
+					<a href="https://www.youtube.com/live/pTgIx-ucMsY?feature=shared&t=3825" target="_blanc">
 						<Button class="w-fit" type="text">
 							<Play />
 							<p>{m.home_inlang_secondary_link()}</p>
 						</Button>
-					</Link>
+					</a>
 				</div>
 				<h1 class="text-4xl max-w-[650px] md:text-5xl text-surface-900 text-center lg:text-start font-bold tracking-tight mt-6">
 					{m.home_inlang_title()}

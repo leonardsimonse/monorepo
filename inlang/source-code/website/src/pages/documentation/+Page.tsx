@@ -12,7 +12,6 @@ import { getTableOfContents } from "./getTableOfContents.js"
 import InPageNav from "./InPageNav.jsx"
 import MainActions from "./MainActions.jsx"
 import { getDocsBaseUrl } from "#src/interface/sdkDocs/SdkDocsHeader.jsx"
-import { i18nRouting } from "#src/renderer/+onBeforeRoute.js"
 import NavbarIcon from "./NavbarIcon.jsx"
 import NavbarOtherPageIndicator from "./NavBarOtherPageIndicator.jsx"
 
@@ -124,10 +123,7 @@ export default function Page(props: PageProps) {
 			/>
 			<Meta name="twitter:site" content="@inlanghq" />
 			<Meta name="twitter:creator" content="@inlanghq" />
-			<Link
-				href={`https://inlang.com${i18nRouting(currentPageContext.urlParsed.pathname).url}`}
-				rel="canonical"
-			/>
+			<Link href={`https://inlang.com${currentPageContext.urlParsed.pathname}`} rel="canonical" />
 			<SdkDocsLayout>
 				<div class="relative block md:flex grow w-full">
 					{/* desktop navbar */}

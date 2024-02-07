@@ -1,5 +1,4 @@
 import { LixBadge } from "#src/interface/components/Card.jsx"
-import Link from "#src/renderer/Link.jsx"
 import { registry } from "@inlang/marketplace-registry"
 import { For, Match, Show, Switch } from "solid-js"
 
@@ -61,7 +60,7 @@ const AppHeader = () => {
 								: manifest.description
 
 						return (
-							<Link
+							<a
 								href={
 									manifest.id.split(".")[0] === "guide"
 										? `/g/${manifest.uniqueID}/${manifest.id.replaceAll(".", "-")}`
@@ -130,7 +129,7 @@ const AppHeader = () => {
 										</Show>
 									</div>
 								</div>
-							</Link>
+							</a>
 						)
 					}}
 				</For>

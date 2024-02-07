@@ -1,4 +1,3 @@
-import Link from "#src/renderer/Link.jsx"
 import { type JSXElement, Show } from "solid-js"
 
 export type buttonType =
@@ -44,7 +43,7 @@ export const Button = (props: ButtonProps) => {
 	return (
 		<>
 			<Show when={props?.href?.startsWith("/") && !props.function}>
-				<Link href={props.href}>
+				<a href={props.href}>
 					<button
 						class={
 							"pointer-events-auto flex justify-center items-center h-10 relative gap-2 rounded-md flex-grow-0 flex-shrink-0 text-sm font-medium text-left cursor-pointer transition-all duration-200 " +
@@ -72,10 +71,10 @@ export const Button = (props: ButtonProps) => {
 							</svg>
 						</Show>
 					</button>
-				</Link>
+				</a>
 			</Show>
 			<Show when={!props?.href?.startsWith("/") && !props.function}>
-				<Link href={props.href} target="_blank">
+				<a href={props.href} target="_blank">
 					<div
 						class={
 							"flex justify-center items-center h-10 relative gap-2 rounded flex-grow-0 flex-shrink-0 text-sm font-medium text-left cursor-pointer " +
@@ -103,7 +102,7 @@ export const Button = (props: ButtonProps) => {
 							</svg>
 						</Show>
 					</div>
-				</Link>
+				</a>
 			</Show>
 			<Show when={props.function}>
 				<button

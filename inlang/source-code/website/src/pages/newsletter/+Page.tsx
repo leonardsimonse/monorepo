@@ -2,7 +2,6 @@ import { Link, Meta, Title } from "@solidjs/meta"
 import { NewsletterForm } from "#src/interface/components/NewsletterForm.jsx"
 import MarketplaceLayout from "#src/interface/marketplace/MarketplaceLayout.jsx"
 import * as m from "#src/paraglide/messages.js"
-import { i18nRouting } from "#src/renderer/+onBeforeRoute.js"
 import { currentPageContext } from "#src/renderer/state.js"
 
 export type PageProps = {
@@ -22,10 +21,7 @@ export default function Page() {
 				content="https://cdn.jsdelivr.net/gh/opral/monorepo@latest/inlang/source-code/website/public/opengraph/inlang-social-image.jpg"
 			/>
 			{/* <Meta name="robots" content="noindex" /> */}
-			<Link
-				href={`https://inlang.com${i18nRouting(currentPageContext.urlParsed.pathname).url}`}
-				rel="canonical"
-			/>
+			<Link href={`https://inlang.com${currentPageContext.urlParsed.pathname}`} rel="canonical" />
 			<MarketplaceLayout>
 				<div class="relative max-w-screen-xl w-full mx-auto">
 					<div class="w-full flex md:pt-12 flex-col gap-16">

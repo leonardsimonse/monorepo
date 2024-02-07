@@ -8,7 +8,6 @@ import {
 	IconVue,
 	IconAstro,
 } from "#src/interface/custom-icons/subcategoryIcon.jsx"
-import Link from "#src/renderer/Link.jsx"
 import { currentPageContext } from "#src/renderer/state.js"
 import { For } from "solid-js"
 import * as m from "#src/paraglide/messages.js"
@@ -65,7 +64,7 @@ const Stack = () => {
 				<div class="flex gap-2 overflow-x-scroll hide-scrollbar">
 					<For each={getSubCategories}>
 						{(link) => (
-							<Link href={"/c/" + link.param} class="flex-grow">
+							<a href={"/c/" + link.param} class="flex-grow">
 								<div
 									class={
 										(currentPageContext.urlParsed.searchOriginal?.includes(link.param)
@@ -77,7 +76,7 @@ const Stack = () => {
 									{link.icon}
 									{link.name}
 								</div>
-							</Link>
+							</a>
 						)}
 					</For>
 				</div>

@@ -1,4 +1,3 @@
-import Link from "#src/renderer/Link.jsx"
 import { registry } from "@inlang/marketplace-registry"
 import { For, Show } from "solid-js"
 import { Arrow } from "../Personas/Developer.jsx"
@@ -66,7 +65,7 @@ const PluginSection = () => {
 											: manifest.description
 
 									return (
-										<Link
+										<a
 											href={`/m/${manifest.uniqueID}/${manifest.id.replaceAll(".", "-")}`}
 											class="col-span-1 bg-background border border-surface-200 hover:border-surface-400 rounded-2xl px-6 py-5 flex flex-col gap-6 transition-all"
 										>
@@ -89,7 +88,7 @@ const PluginSection = () => {
 												<div class="font-bold text-surface-600">{displayName()}</div>
 												<div class="line-clamp-2 text-surface-500 text-sm">{description()}</div>
 											</div>
-										</Link>
+										</a>
 									)
 								}}
 							</For>

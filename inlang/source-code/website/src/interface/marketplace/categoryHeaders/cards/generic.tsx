@@ -1,6 +1,5 @@
 import { Button } from "#src/pages/index/components/Button.jsx"
 import * as m from "#src/paraglide/messages.js"
-import Link from "#src/renderer/Link.jsx"
 
 const GenericHeader = () => {
 	return (
@@ -23,7 +22,7 @@ const GenericHeader = () => {
 						</Button>
 					</div>
 				</div>
-				<Link
+				<a
 					href="/m/gerre34r/library-inlang-paraglideJs"
 					class="relative flex-1 h-[260px] bg-background rounded-xl border border-surface-300 flex flex-col justify-end md:min-w-[380px] group hover:border-surface-400 transition-all cursor-pointer"
 				>
@@ -43,7 +42,7 @@ const GenericHeader = () => {
 					</div>
 					<div class="absolute w-full h-full top-0 bg-[#3592FF] rounded-xl z-10 opacity-20" />
 					<div class="absolute w-full h-full top-0 bg-gradient-to-t from-background rounded-xl z-10" />
-				</Link>
+				</a>
 				<div class="flex-1 h-[260px] flex flex-col gap-4 md:min-w-[380px]">
 					<a
 						href="/documentation/plugin"

@@ -5,7 +5,6 @@ import { currentPageContext } from "#src/renderer/state.js"
 import IconGithub from "~icons/cib/github"
 import IconDiscord from "~icons/cib/discord"
 import { IconX } from "../components/Icon.jsx"
-import Link from "#src/renderer/Link.jsx"
 import * as m from "#src/paraglide/messages.js"
 import { LanguagePicker } from "#src/pages/index/LanguagePicker.jsx"
 import { Banner } from "../components/Banner.jsx"
@@ -47,7 +46,7 @@ const MarketplaceHeader = () => {
 						"max-w-7xl mx-auto flex justify-between items-center relative sm:static mb-0 gap-3 px-4 md:px-0 bg-background"
 					}
 				>
-					<Link
+					<a
 						href={"/"}
 						onClick={() => setSearchInput("")}
 						class="flex items-center w-fit pointer-events-auto py-4 transition-opacity hover:opacity-75"
@@ -58,7 +57,7 @@ const MarketplaceHeader = () => {
 							alt="Company Logo"
 						/>
 						<span class={"self-center pl-2 text-left font-semibold text-surface-900"}>inlang</span>
-					</Link>
+					</a>
 					<div class="static top-0 lg:absolute lg:top-4 lg:left-1/2 lg:-translate-x-1/2 flex-1 sm:max-w-sm md:w-80 mx-0">
 						<SearchBar />
 					</div>
@@ -73,14 +72,14 @@ const MarketplaceHeader = () => {
 						<div class="gap-[2px] items-center hidden md:flex">
 							<For each={socialMediaLinks}>
 								{(link) => (
-									<Link
+									<a
 										target="_blank"
 										class={"text-surface-700 hover:text-primary flex space-x-2 items-center p-2"}
 										href={link.href}
 									>
 										<link.Icon class="w-5 h-5" />
 										<span class="sr-only">{link.name}</span>
-									</Link>
+									</a>
 								)}
 							</For>
 						</div>

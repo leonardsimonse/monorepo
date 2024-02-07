@@ -1,17 +1,9 @@
 import { type Accessor, type Component, createEffect, ErrorBoundary } from "solid-js"
 import type { PageContextRenderer } from "./types.js"
-import { Dynamic, isServer } from "solid-js/web"
+import { Dynamic } from "solid-js/web"
 import { LocalStorageProvider } from "#src/services/local-storage/index.js"
-import {
-	availableLanguageTags,
-	onSetLanguageTag,
-	setLanguageTag,
-	sourceLanguageTag,
-} from "#src/paraglide/runtime.js"
-import { currentPageContext } from "./state.js"
-import type { JSXElement } from "solid-js"
-import type { LanguageTag } from "@inlang/sdk"
-import Link from "./Link.jsx"
+import { sourceLanguageTag } from "#src/paraglide/runtime.js"
+import { LanguageTagProvider, useLocationLanguageTag } from "./i18n.js"
 
 export type RootProps = Accessor<{
 	pageContext: PageContextRenderer
@@ -25,48 +17,18 @@ export type RootProps = Accessor<{
  * error boundaries.
  */
 export default function Root(props: { page: Component; pageProps: Record<string, unknown> }) {
+	// const url_language_tag = useLocationLanguageTag()
+	// const language_tag = url_language_tag ?? sourceLanguageTag
+
 	return (
 		<ErrorBoundary fallback={(error) => <ErrorMessage error={error} />}>
-			<ParaglideJsProvider>
-				<LocalStorageProvider>
-					<Dynamic component={props.page} {...(props.pageProps ?? {})} />
-				</LocalStorageProvider>
-			</ParaglideJsProvider>
+			{/* <LanguageTagProvider value={"en"}> */}
+			<LocalStorageProvider>
+				<Dynamic component={props.page} {...(props.pageProps ?? {})} />
+			</LocalStorageProvider>
+			{/* </LanguageTagProvider> */}
 		</ErrorBoundary>
 	)
-}
-
-function ParaglideJsProvider(props: { children: JSXElement }) {
-	setLanguageTag(() => {
-		return currentPageContext.languageTag as (typeof availableLanguageTags)[number]
-	})
-
-	if (isServer === false && window) {
-		// The url contains a language tag for non source language tag routes
-		const maybeLanguageTag = window.location.pathname.split("/")[1] as
-			| (typeof availableLanguageTags)[number]
-			| undefined
-
-		const pathIncludesLanguageTag = maybeLanguageTag
-			? availableLanguageTags.includes(maybeLanguageTag)
-			: false
-		onSetLanguageTag((newLanguageTag: LanguageTag) => {
-			if (pathIncludesLanguageTag) {
-				//replace old languageTag with new one
-				window.location.pathname = window.location.pathname
-					.replace(
-						currentPageContext.languageTag,
-						// if new is source languageTag remove the tag
-						newLanguageTag === sourceLanguageTag ? "" : newLanguageTag
-					)
-					.replace("//", "/")
-			} else {
-				window.location.pathname = "/" + newLanguageTag + window.location.pathname
-			}
-		})
-	}
-
-	return <>{props.children}</>
 }
 
 function ErrorMessage(props: { error: Error }) {
@@ -78,13 +40,13 @@ function ErrorMessage(props: { error: Error }) {
 			<p class="text-danger text-lg font-medium">ERROR DURING RENDERING</p>
 			<p class="text-danger">
 				Check the console for more information and please{" "}
-				<Link
+				<a
 					class="link text-primary"
 					target="_blank"
 					href="https://github.com/opral/monorepo/issues/new/choose"
 				>
 					report the bug.
-				</Link>
+				</a>
 			</p>
 			<p class="bg-danger-container text-on-danger-container rounded p-2 mt-4">
 				{props.error?.toString()}
