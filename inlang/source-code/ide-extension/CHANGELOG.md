@@ -1,5 +1,11 @@
 # inlang-vs-code-extension
 
+## 1.32.1
+
+### Patch Changes
+
+- 611d058d4: scope sentry logging to activate function of extension
+
 ## 1.32.0
 
 ### Minor Changes
